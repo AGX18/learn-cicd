@@ -19,7 +19,7 @@ jobs:
           go-version: "1.26.0"
 
       - name: running tests
-        run: go test -cover ./... 
+        run: go test -cover ./...
   style:
     name: Style
     runs-on: ubuntu-latest
@@ -45,5 +45,5 @@ jobs:
       - name: Install gosec
         run: go install github.com/securego/gosec/v2/cmd/gosec@latest
 
-      - name: running checks
-        run: gosec  ./...
+      - name: running gosec checks
+        run: gosec -fmt=json  ./...
